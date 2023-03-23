@@ -20,10 +20,16 @@ export const HeaderLogo = styled.img`
   height: 25px;
 `;
 
-export const HeaderCart = styled.div`
+export const HeaderCart = styled.a`
   display: flex;
   align-items: center;
   gap: 9.33px;
+
+  transition: all 0.7s ease-in;
+
+  &:hover {
+    filter: brightness(0.5);
+  }
 `;
 
 export const HeaderCartTextContent = styled.div`

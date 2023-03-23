@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import {
   CartIcon,
   CartItens,
@@ -13,15 +15,19 @@ export function Header() {
   return (
     <Container>
       <MenuContainer>
-        <HeaderLogo src="img/wemovies_logo.svg" />
+        <Link to="/">
+          <HeaderLogo src="img/wemovies_logo.svg" />
+        </Link>
 
-        <HeaderCart>
-          <HeaderCartTextContent>
-            <CartTitle>Meu Carrinho</CartTitle>
-            <CartItens>0 itens</CartItens>
-          </HeaderCartTextContent>
-          <CartIcon src="icons/cart_icon.svg" />
-        </HeaderCart>
+        <Link to="/cart">
+          <HeaderCart>
+            <HeaderCartTextContent>
+              <CartTitle>Meu Carrinho</CartTitle>
+              <CartItens>0 itens</CartItens>
+            </HeaderCartTextContent>
+            <CartIcon src="icons/cart_icon.svg" />
+          </HeaderCart>
+        </Link>
       </MenuContainer>
     </Container>
   );
