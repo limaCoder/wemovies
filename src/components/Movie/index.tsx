@@ -1,11 +1,12 @@
 import { Container, MovieImage, MoviePrice, MovieTitle } from "./styles";
+import { MovieProps } from "./types";
 
-export function Movie() {
+export function Movie({ image, title, price }: MovieProps) {
   return (
     <Container>
-      <MovieImage src="img/viuva-negra.png" />
-      <MovieTitle>Viúva Negra</MovieTitle>
-      <MoviePrice>R$ 9,99</MoviePrice>
+      <MovieImage src={image} />
+      <MovieTitle>{title}</MovieTitle>
+      <MoviePrice>R$ {price}</MoviePrice>
     </Container>
   );
 }
