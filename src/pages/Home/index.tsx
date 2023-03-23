@@ -5,10 +5,10 @@ import { Container, MoviesListContainer } from "./styles";
 import { api } from "../../services/api";
 
 import { Movie } from "../../components/Movie";
-import { MovieProps } from "../../components/Movie/types";
+import { MovieState } from "../../components/Movie/types";
 
 export function Home() {
-  const [movies, setMovies] = useState<MovieProps[]>([]);
+  const [movies, setMovies] = useState<MovieState[]>([]);
 
   useEffect(() => {
     async function getMovies() {
@@ -29,7 +29,10 @@ export function Home() {
             key={movie.id}
             image={movie.image}
             title={movie.title}
-            price={movie.price}
+            price={new Intl.NumberFormat("pt-br", {
+              style: "currency",
+              currency: "BRL"
+            }).format(movie.price)}
           />
         ))}
       </MoviesListContainer>

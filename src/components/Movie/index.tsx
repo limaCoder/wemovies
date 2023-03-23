@@ -6,7 +6,7 @@ export function Movie({ image, title, price }: MovieProps) {
     <Container>
       <MovieImage src={image} />
       <MovieTitle>{title}</MovieTitle>
-      <MoviePrice>R$ {price}</MoviePrice>
+      <MoviePrice>{price}</MoviePrice>
     </Container>
   );
 }
