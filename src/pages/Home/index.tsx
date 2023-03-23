@@ -6,6 +6,7 @@ import { api } from "../../services/api";
 
 import { Movie } from "../../components/Movie";
 import { MovieState } from "../../components/Movie/types";
+import { ClipLoader } from "react-spinners";
 
 export function Home() {
   const [movies, setMovies] = useState<MovieState[]>([]);
@@ -13,13 +14,19 @@ export function Home() {
   useEffect(() => {
     async function getMovies() {
       const result = await api.get("/products");
-
-      console.log(result.data);
       setMovies(result.data);
     }
 
     getMovies();
   }, []);
+
+  if (!movies.length) {
+    return (
+      <Container>
+        <ClipLoader color="#E6E6E6" />
+      </Container>
+    );
+  }
 
   return (
     <Container>
