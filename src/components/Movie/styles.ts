@@ -9,8 +9,8 @@ export const Container = styled.div`
   padding: 10px 11px;
   gap: 8px;
 
-  width: 287.33px;
-  height: 285px;
+  width: 309.33px;
+  height: 305px;
   border-radius: 4px;
 `;
 
@@ -32,4 +32,23 @@ export const MoviePrice = styled.p`
   line-height: 22px;
 
   text-align: center;
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3.4px;
+  margin-right: 12px;
+`;
+
+export const CartAddMoreIcon = styled.img`
+  width: 13.6px;
+  height: 13.6px;
+`;
+
+export const MovieQuantity = styled.p`
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
 `;

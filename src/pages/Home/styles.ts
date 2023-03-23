@@ -15,5 +15,5 @@ export const MoviesListContainer = styled.div`
   flex-wrap: wrap;
   gap: 16px;
 
-  max-width: 957px;
+  width: 967px;
 `;

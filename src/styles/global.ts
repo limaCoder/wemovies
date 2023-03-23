@@ -9,14 +9,14 @@ export const GlobalStyle = createGlobalStyle`
     --background: #2F2E41 ;
   }
 
-  *, 
+  *,
   *:after,
   *:before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-  }  
+  }
 
   html {
 		font-size: 62.5%; /* 10px - definindo que todas as fontes terão esse mesmo tamanho
@@ -38,12 +38,12 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  body, 
-  html {  
-    overflow-x:hidden; 
+  body,
+  html {
+    overflow-x:hidden;
   }
 
-  button {
+  button, a {
     cursor: pointer;
   }
 
