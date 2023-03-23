@@ -24,14 +24,17 @@ export const MovieTitle = styled.h3`
   font-size: 12px;
   line-height: 16px;
   text-align: center;
+
+  color: var(--text-primary);
 `;
 
 export const MoviePrice = styled.p`
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
-
   text-align: center;
+
+  color: var(--text-secondary);
 `;
 
 export const IconWrapper = styled.div`

@@ -9,14 +9,14 @@ import {
   ContentImage
 } from "./styles";
 
-export function Cart() {
+export function SuccessfulPurchase() {
   return (
     <Container>
       <ContentContainer>
         <ContentColumn>
-          <ContentTitle>Parece que não há nada por aqui :(</ContentTitle>
-          <ContentImage src="img/fallback_products.svg" />
-          <Link to="/sucessful-purchase">
+          <ContentTitle>Compra realizada com sucesso!</ContentTitle>
+          <ContentImage src="img/successful_purchase.svg" />
+          <Link to="/">
             <Button color="primary" size="medium">
               Voltar
             </Button>

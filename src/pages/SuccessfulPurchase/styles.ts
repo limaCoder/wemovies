@@ -34,6 +34,6 @@ export const ContentTitle = styled.p`
 `;
 
 export const ContentImage = styled.img`
-  width: 178.63px;
-  height: 264px;
+  width: 294.96px;
+  height: 307px;
 `;

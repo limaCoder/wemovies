@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import { Home } from "../pages/Home";
 import { Cart } from "../pages/Cart";
-import { SuccessfulPurchase } from "../pages/Successful Purchase";
+import { SuccessfulPurchase } from "../pages/SuccessfulPurchase";
 
 import { DefaultLayout } from "../layouts/DefaultLayout";
 
