@@ -16,4 +16,5 @@ export const MoviesListContainer = styled.div`
   gap: 16px;
 
   width: 967px;
+  padding: 30px 0;
 `;

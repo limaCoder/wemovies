@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const ContentContainer = styled.div`
   width: 960px;
-  height: 532.8px;
+  min-height: 532.8px;
 
   background-color: var(--white);
 `;

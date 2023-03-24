@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
   *:before {
     margin: 0;
     padding: 0;
+    border: 0;
     box-sizing: border-box;
     text-decoration: none;
   }
@@ -45,6 +46,7 @@ export const GlobalStyle = createGlobalStyle`
 
   button, a {
     cursor: pointer;
+    background: none;
   }
 
   svg, img {
