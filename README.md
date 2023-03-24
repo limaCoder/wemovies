@@ -43,4 +43,4 @@ O app estará disponível no seu browser pelo endereço http://localhost:5173 as
 
 ## 🌐 Live preview
 
-Sem live preview no momento.
+https://wemovies-klp05zsos-limacoder.vercel.app
