@@ -73,3 +73,42 @@ export const CartMovieSubtotal = styled.span`
 `;
 
 export const CartMovieTrashIcon = styled.img``;
+
+export const CartMovieProductMobile = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 16px;
+`;
+
+export const CartMovieImageMobile = styled.img`
+  width: 64px;
+  height: 82px;
+`;
+
+export const CartMovieSubtotalTitleMobile = styled.span`
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+
+  color: var(--gray);
+`;
+
+export const CartMovieColumnMobile = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  &:nth-of-type(3) {
+    align-items: flex-end;
+  }
+`;
+
+export const CartMovieRowMobile = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+
+  margin-bottom: 16px;
+`;

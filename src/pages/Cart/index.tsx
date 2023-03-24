@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Button } from "../../components/Button";
@@ -14,11 +14,24 @@ import {
   CartTotalTitle,
   CartTotalPrice,
   CartTotal,
-  HorizontalLine
+  HorizontalLine,
+  ContentTableContainer
 } from "./styles";
 
 export function Cart() {
   const [isAvailableMovies] = useState(true);
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const isSmallScreen = screenWidth <= 650;
 
   if (!isAvailableMovies) {
     return (
@@ -40,19 +53,22 @@ export function Cart() {
 
   return (
     <Container>
-      <ContentContainer>
+      <ContentTableContainer>
         <CartMoviesTable />
 
-        <HorizontalLine />
-
-        <CartFinalRow>
-          <Button size="medium">Finalizar Pedido</Button>
-          <CartTotal>
-            <CartTotalTitle>TOTAL</CartTotalTitle>
-            <CartTotalPrice>R$ 29,90</CartTotalPrice>
-          </CartTotal>
-        </CartFinalRow>
-      </ContentContainer>
+        <div>
+          <HorizontalLine />
+          <CartFinalRow>
+            <Button size={isSmallScreen ? "extra-large" : "medium"}>
+              Finalizar Pedido
+            </Button>
+            <CartTotal>
+              <CartTotalTitle>TOTAL</CartTotalTitle>
+              <CartTotalPrice>R$ 29,90</CartTotalPrice>
+            </CartTotal>
+          </CartFinalRow>
+        </div>
+      </ContentTableContainer>
     </Container>
   );
 }

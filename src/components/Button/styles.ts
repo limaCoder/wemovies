@@ -23,7 +23,9 @@ export const ButtonStyled = styled.a<ButtonProps>`
       ? "180xpx"
       : props.size === "medium"
       ? "235.42px"
-      : "287.33px"};
+      : props.size === "large"
+      ? "287.33px"
+      : "100%"};
 
   font-weight: 700;
   text-align: center;

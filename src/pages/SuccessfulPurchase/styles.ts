@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  min-height: 80vh;
+  padding: 0 16px;
 
   display: flex;
   justify-content: center;
@@ -11,8 +11,20 @@ export const Container = styled.div`
 export const ContentContainer = styled.div`
   width: 960px;
   min-height: 532.8px;
+  padding: 40px 64px;
 
   background-color: var(--white);
+  overflow-x: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    width: unset;
+    height: 574px;
+  }
 `;
 
 export const ContentColumn = styled.div`
@@ -29,6 +41,7 @@ export const ContentTitle = styled.p`
   font-weight: 700;
   font-size: 20px;
   line-height: 27px;
+  text-align: center;
 
   color: var(--text-secondary);
 `;
