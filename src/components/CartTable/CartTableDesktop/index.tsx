@@ -13,7 +13,27 @@ import {
   CartTableHead
 } from "../styles";
 
-export function CartTableDesktop() {
+interface CartTableProps {
+  image: string;
+  title: string;
+  price: string;
+  subtotal: string;
+  quantity: number;
+  onDecreaseQuantity: () => void;
+  onIncreaseQuantity: () => void;
+  onRemove: () => void;
+}
+
+export function CartTableDesktop({
+  image,
+  title,
+  price,
+  subtotal,
+  quantity,
+  onDecreaseQuantity,
+  onIncreaseQuantity,
+  onRemove
+}: CartTableProps) {
   return (
     <CartTable>
       <thead>
@@ -29,30 +49,30 @@ export function CartTableDesktop() {
       <tbody>
         <tr>
           <td width={137}>
-            <CartMovieImage src="img/viuva-negra.png" />
+            <CartMovieImage src={image} />
           </td>
-          <td>
+          <td width={253}>
             <CartMovieContent>
-              <CartMovieTitle>Viúva Negra</CartMovieTitle>
-              <CartMoviePrice>R$ 29,99</CartMoviePrice>
+              <CartMovieTitle>{title}</CartMovieTitle>
+              <CartMoviePrice>{price}</CartMoviePrice>
             </CartMovieContent>
           </td>
           <td>
             <CartMovieQuantityActions>
-              <button>
+              <button onClick={onDecreaseQuantity}>
                 <CartMovieDecreaseQuantity src="icons/minus_icon.svg" />
               </button>
-              <CartMovieQuantityInput type="number" min="1" value={1} />
-              <button>
+              <CartMovieQuantityInput type="number" min="1" value={quantity} />
+              <button onClick={onIncreaseQuantity}>
                 <CartMovieIncreaseQuantity src="icons/plus_icon.svg" />
               </button>
             </CartMovieQuantityActions>
           </td>
           <td>
-            <CartMovieSubtotal>R$ 29,99</CartMovieSubtotal>
+            <CartMovieSubtotal>{subtotal}</CartMovieSubtotal>
           </td>
           <td>
-            <button>
+            <button onClick={onRemove}>
               <CartMovieTrashIcon src="icons/trash_icon.svg" />
             </button>
           </td>

@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import { useCart } from "../../context/CartContext";
+
 import {
   CartIcon,
   CartItens,
@@ -12,6 +14,8 @@ import {
 } from "./styles";
 
 export function Header() {
+  const { quantityItems } = useCart();
+
   return (
     <Container>
       <MenuContainer>
@@ -23,7 +27,7 @@ export function Header() {
           <HeaderCart>
             <HeaderCartTextContent>
               <CartTitle>Meu Carrinho</CartTitle>
-              <CartItens>0 itens</CartItens>
+              <CartItens>{quantityItems} itens</CartItens>
             </HeaderCartTextContent>
             <CartIcon src="icons/cart_icon.svg" />
           </HeaderCart>

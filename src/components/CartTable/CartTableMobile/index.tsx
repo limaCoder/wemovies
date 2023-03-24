@@ -14,33 +14,53 @@ import {
   CartMovieTrashIcon
 } from "../styles";
 
-export function CartTableMobile() {
+interface CartTableProps {
+  image: string;
+  title: string;
+  price: string;
+  subtotal: string;
+  quantity: number;
+  onDecreaseQuantity: () => void;
+  onIncreaseQuantity: () => void;
+  onRemove: () => void;
+}
+
+export function CartTableMobile({
+  image,
+  title,
+  price,
+  subtotal,
+  quantity,
+  onDecreaseQuantity,
+  onIncreaseQuantity,
+  onRemove
+}: CartTableProps) {
   return (
     <CartMovieProductMobile>
       <CartMovieColumnMobile>
-        <CartMovieImageMobile src="img/viuva-negra.png" />
+        <CartMovieImageMobile src={image} />
       </CartMovieColumnMobile>
       <CartMovieColumnMobile>
-        <CartMovieTitle>Viúva Negra</CartMovieTitle>
+        <CartMovieTitle>{title}</CartMovieTitle>
         <CartMovieQuantityActions>
-          <button>
+          <button onClick={onDecreaseQuantity}>
             <CartMovieDecreaseQuantity src="icons/minus_icon.svg" />
           </button>
-          <CartMovieQuantityInput type="number" min="1" value={1} />
-          <button>
+          <CartMovieQuantityInput type="number" min="1" value={quantity} />
+          <button onClick={onIncreaseQuantity}>
             <CartMovieIncreaseQuantity src="icons/plus_icon.svg" />
           </button>
         </CartMovieQuantityActions>
       </CartMovieColumnMobile>
       <CartMovieColumnMobile>
         <CartMovieRowMobile>
-          <CartMoviePrice>R$ 29,99</CartMoviePrice>
-          <button>
+          <CartMoviePrice>{price}</CartMoviePrice>
+          <button onClick={onRemove}>
             <CartMovieTrashIcon src="icons/trash_icon.svg" />
           </button>
         </CartMovieRowMobile>
         <CartMovieSubtotalTitleMobile>Subtotal</CartMovieSubtotalTitleMobile>
-        <CartMovieSubtotal>R$ 29,99</CartMovieSubtotal>
+        <CartMovieSubtotal>{subtotal}</CartMovieSubtotal>
       </CartMovieColumnMobile>
     </CartMovieProductMobile>
   );

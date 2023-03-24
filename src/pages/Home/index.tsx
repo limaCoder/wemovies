@@ -5,16 +5,34 @@ import { Container, MoviesListContainer } from "./styles";
 import { api } from "../../services/api";
 
 import { Movie } from "../../components/Movie";
-import { MovieState } from "../../components/Movie/types";
+import { MovieModel } from "../../components/Movie/types";
+
 import { ClipLoader } from "react-spinners";
+import { toast } from "react-toastify";
 
 export function Home() {
-  const [movies, setMovies] = useState<MovieState[]>([]);
+  const [movies, setMovies] = useState<MovieModel[]>([]);
 
   useEffect(() => {
     async function getMovies() {
-      const result = await api.get("/products");
-      setMovies(result.data);
+      try {
+        const result = await api.get("/products");
+        setMovies(result.data);
+      } catch (error) {
+        const notifyError = () =>
+          toast.error("Houve erro na busca de filmes 😥", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored"
+          });
+
+        notifyError();
+      }
     }
 
     getMovies();
@@ -32,15 +50,7 @@ export function Home() {
     <Container>
       <MoviesListContainer>
         {movies.map((movie) => (
-          <Movie
-            key={movie.id}
-            image={movie.image}
-            title={movie.title}
-            price={new Intl.NumberFormat("pt-br", {
-              style: "currency",
-              currency: "BRL"
-            }).format(movie.price)}
-          />
+          <Movie key={movie.id} movie={movie} />
         ))}
       </MoviesListContainer>
     </Container>
